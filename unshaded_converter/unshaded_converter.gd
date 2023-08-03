@@ -22,8 +22,12 @@ func convert() -> void:
 		var file_name = dir.get_next()
 		while file_name != "":
 			var file_path = path + file_name
+			var resource = load(file_path)
+			if not resource is StandardMaterial3D:
+				file_name = dir.get_next()
+				continue
+				
 			print("Converting ", file_path)
-			var resource: StandardMaterial3D = load(file_path)
 			resource.cull_mode = 0
 			resource.shading_mode = 0
 			ResourceSaver.save(resource, file_path)
