@@ -6,7 +6,6 @@ var dock
 var folder_text: LineEdit
 
 func _enter_tree() -> void:
-	print("eae")
 	dock = load("res://addons/unshaded_converter/unshaded_converter.tscn").instantiate()
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_UL, dock)
 	
