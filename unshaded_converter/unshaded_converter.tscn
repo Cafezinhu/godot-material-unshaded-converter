@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://db3s6fwjovp2q"]
+
+[node name="unshaded_converter" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Folder" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Folder"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Folder"
+
+[node name="LineEdit" type="LineEdit" parent="Folder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Convert" type="Button" parent="."]
+layout_mode = 2
+text = "Convert"
+
+[connection signal="pressed" from="Convert" to="." method="convert_button_clicked"]
